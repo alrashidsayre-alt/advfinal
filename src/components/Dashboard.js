@@ -25,8 +25,13 @@ export default function Dashboard({ onLogout }) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
-      {/* Header */}
+    <div 
+      className="min-h-screen bg-cover bg-center bg-fixed text-white"
+      style={{ backgroundImage: 'url(/bg/hero-bg.jpg)' }}
+    >
+      <div className="fixed inset-0 bg-black/60 pointer-events-none"></div>
+      
+      <div className="relative z-10">
       <header className="bg-black/50 backdrop-blur-lg border-b border-gray-800 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -57,7 +62,6 @@ export default function Dashboard({ onLogout }) {
         </div>
       </header>
 
-      {/* Navigation Tabs */}
       <nav className="bg-black/30 backdrop-blur-lg border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex space-x-1 overflow-x-auto">
@@ -79,8 +83,7 @@ export default function Dashboard({ onLogout }) {
         </div>
       </nav>
 
-      {/* Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8 relative z-20">
         {activeTab === 'workouts' && <WorkoutList />}
         {activeTab === 'create' && <CreateWorkout onSuccess={() => setActiveTab('workouts')} />}
         {activeTab === 'plans' && <WorkoutPlans />}
@@ -88,6 +91,7 @@ export default function Dashboard({ onLogout }) {
         {activeTab === 'progress' && <ProgressPhotos />}
         {activeTab === 'profile' && <Profile user={user} setUser={setUser} />}
       </main>
+      </div>
     </div>
   );
 }

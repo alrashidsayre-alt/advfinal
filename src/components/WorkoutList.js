@@ -7,7 +7,7 @@ export default function WorkoutList() {
   const [selectedWorkout, setSelectedWorkout] = useState(null);
   const [workoutDetails, setWorkoutDetails] = useState([]);
   const [deleting, setDeleting] = useState(null);
-  const [filter, setFilter] = useState('all'); // all, week, month
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     fetchWorkouts();
@@ -149,7 +149,6 @@ export default function WorkoutList() {
 
   return (
     <div className="space-y-6">
-      {/* Header Section */}
       <div className="bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl p-8 shadow-2xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
@@ -157,7 +156,6 @@ export default function WorkoutList() {
             <p className="text-white/90 text-lg">Track your progress and crush your goals</p>
           </div>
           
-          {/* Filter Buttons */}
           <div className="flex gap-2 bg-white/20 backdrop-blur p-1 rounded-lg">
             <button
               onClick={() => setFilter('all')}
@@ -193,7 +191,6 @@ export default function WorkoutList() {
         </div>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6 shadow-xl">
           <div className="flex items-center justify-between">
@@ -228,7 +225,6 @@ export default function WorkoutList() {
         </div>
       </div>
 
-      {/* Workouts List */}
       {filteredWorkouts.length === 0 ? (
         <div className="text-center py-12 bg-gray-800 rounded-xl border border-gray-700">
           <p className="text-gray-400 text-lg">No workouts found for this period</p>
@@ -252,7 +248,6 @@ export default function WorkoutList() {
                   </p>
                 </div>
 
-                {/* Workout Info */}
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-red-400 transition">
                     {workout.plan_name || '🏋️ Custom Workout'}
@@ -312,7 +307,6 @@ export default function WorkoutList() {
         </div>
       )}
 
-      {/* Workout Details Modal */}
       {selectedWorkout && (
         <div 
           className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in"
@@ -322,7 +316,6 @@ export default function WorkoutList() {
             className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 max-w-4xl w-full max-h-[85vh] overflow-y-auto border-2 border-gray-700 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
             <div className="flex justify-between items-start mb-6 pb-6 border-b border-gray-700">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -365,7 +358,6 @@ export default function WorkoutList() {
               </div>
             </div>
 
-            {/* Notes */}
             {selectedWorkout.notes && (
               <div className="bg-gray-900 rounded-xl p-5 mb-6 border border-gray-700">
                 <p className="text-gray-400 text-sm mb-2 font-semibold uppercase tracking-wider">Session Notes</p>
@@ -373,7 +365,6 @@ export default function WorkoutList() {
               </div>
             )}
 
-            {/* Exercises Section */}
             <div>
               <h4 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <span>🏋️</span> Exercise Details

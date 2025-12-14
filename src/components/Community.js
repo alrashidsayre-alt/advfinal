@@ -190,7 +190,6 @@ export default function Community() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      {/* Header */}
       <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 shadow-2xl">
         <div className="flex justify-between items-center">
           <div>
@@ -206,7 +205,6 @@ export default function Community() {
         </div>
       </div>
 
-      {/* Create Post */}
       {showCreatePost && (
         <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 shadow-xl">
           <h3 className="text-xl font-bold text-white mb-4">Create a Post</h3>
@@ -252,7 +250,6 @@ export default function Community() {
         </div>
       )}
 
-      {/* Posts Feed */}
       <div className="space-y-6">
         {posts.length === 0 ? (
           <div className="text-center py-16 bg-gray-800 rounded-xl border border-gray-700">
@@ -263,7 +260,6 @@ export default function Community() {
         ) : (
           posts.map((post) => (
             <div key={post.id} className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl border border-gray-700 overflow-hidden">
-              {/* Post Header */}
               <div className="p-6 pb-4">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -297,16 +293,13 @@ export default function Community() {
                   )}
                 </div>
 
-                {/* Post Content */}
                 <p className="text-white text-lg mb-4 whitespace-pre-wrap">{post.content}</p>
               </div>
 
-              {/* Post Image */}
               {post.image_url && (
                 <img src={post.image_url} alt="Post" className="w-full max-h-96 object-cover" />
               )}
 
-              {/* Post Actions */}
               <div className="p-6 pt-4 border-t border-gray-700">
                 <div className="flex items-center gap-6">
                   <button
@@ -346,7 +339,6 @@ export default function Community() {
               <button onClick={() => setSelectedPost(null)} className="text-gray-400 hover:text-white text-3xl">✕</button>
             </div>
 
-            {/* Add Comment */}
             <div className="mb-6">
               <textarea
                 value={newComment}
@@ -363,7 +355,6 @@ export default function Community() {
               </button>
             </div>
 
-            {/* Comments List */}
             <div className="space-y-4">
               {comments.length === 0 ? (
                 <p className="text-gray-500 text-center py-8">No comments yet. Be the first!</p>

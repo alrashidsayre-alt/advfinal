@@ -120,7 +120,6 @@ export default function Profile({ user, setUser }) {
         </div>
       </div>
 
-      {/* Motivational Card */}
       <div className="mt-6 bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl p-8 shadow-2xl border-2 border-red-400">
         <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2">
           <span className="text-3xl">💪</span> Keep Pushing!

@@ -88,13 +88,11 @@ export default function CreateWorkout({ onSuccess }) {
 
   return (
     <div className="max-w-5xl mx-auto">
-      {/* Header */}
       <div className="mb-8">
         <h2 className="text-4xl font-bold text-white mb-2">Create New Workout</h2>
         <p className="text-gray-400">Log your training session step by step</p>
       </div>
 
-      {/* Progress Steps */}
       <div className="mb-8 flex items-center justify-center gap-4">
         <div className={`flex items-center gap-3 ${step >= 1 ? 'text-red-500' : 'text-gray-600'}`}>
           <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border-2 ${step >= 1 ? 'bg-red-500 border-red-500 text-white' : 'border-gray-600'}`}>
@@ -119,7 +117,6 @@ export default function CreateWorkout({ onSuccess }) {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Step 1: Basic Details */}
         {step === 1 && (
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8 border border-gray-700">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
@@ -179,7 +176,6 @@ export default function CreateWorkout({ onSuccess }) {
           </div>
         )}
 
-        {/* Step 2: Add Exercises */}
         {step === 2 && (
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8 border border-gray-700">
@@ -305,7 +301,6 @@ export default function CreateWorkout({ onSuccess }) {
           </div>
         )}
 
-        {/* Step 3: Review */}
         {step === 3 && (
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8 border border-gray-700">
